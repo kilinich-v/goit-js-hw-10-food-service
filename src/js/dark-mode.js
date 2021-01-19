@@ -22,19 +22,18 @@ function onThemeToggle(event) {
 const enableDarkMode = () => {
     document.body.classList.remove(Theme.LIGHT);
     document.body.classList.add(Theme.DARK);
-    localStorage.setItem('theme', 'dark-theme');
+    localStorage.setItem('theme', Theme.DARK);
 }
 
 const disableDarkMode = () => {
     document.body.classList.remove(Theme.DARK);
     document.body.classList.add(Theme.LIGHT);
-    localStorage.setItem('theme', 'light-theme');
+    localStorage.setItem('theme', Theme.LIGHT);
 }
 
 if (theme === 'dark-theme') {
     themeImputRef.checked = true;
     enableDarkMode();
 } else {
-    themeImputRef.checked = false;
     disableDarkMode();
 }

@@ -1,10 +1,8 @@
 import * as menu from './menu.json';
-import Handlebars from 'Handlebars';
 
+const menuTemplate = require('../templates/menu.hbs');
 const menuRef = document.querySelector('.js-menu');
-const sourceRef = document.querySelector('#template');
 
-const template = Handlebars.compile(sourceRef.innerHTML);
-const html = menuArray => menuArray.map(dish => template(dish));
+const html = menuArray => menuArray.map(dish => menuTemplate(dish));
 
 menuRef.innerHTML = html(menu.default).join('');
